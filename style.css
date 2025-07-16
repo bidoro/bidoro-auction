@@ -109,3 +109,24 @@ footer {
   text-align: center;
   padding: 20px;
 }
+.featured-auctions {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-slide {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+.swiper-slide img {
+  width: 100%;
+  border-radius: 8px;
+}

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bidoro Car Auction</title>
@@ -34,16 +39,41 @@
     </div>
   </header>
 
-  <!-- ✅ FEATURED AUCTIONS -->
-  <section class="featured-auctions">
-    <h2>Featured Auctions</h2>
-    <div class="auction-cards">
-      <div class="card">€8,500 — 1 hr left</div>
-      <div class="card">€21,200 — 3 days left</div>
-      <div class="card">€12,100 — 2 days left</div>
-      <div class="card">€9,300 — 3 days left</div>
+  <!-- 🚗 Featured Auctions Carousel -->
+<section class="featured-auctions">
+  <h2>Featured Auctions</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/300x200" alt="Car 1" />
+        <h3>BMW 5 Series</h3>
+        <p>€15,500 — 2 days left</p>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/300x200" alt="Car 2" />
+        <h3>Audi A6</h3>
+        <p>€18,000 — 3 days left</p>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="https://via.placeholder.com/300x200" alt="Car 3" />
+        <h3>Mercedes C-Class</h3>
+        <p>€21,000 — 1 day left</p>
+      </div>
+      <!-- Add more slides if you want -->
     </div>
-  </section>
+
+    <!-- Optional navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Optional pagination dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
 
   <!-- ✅ HOW IT WORKS -->
   <section class="how-it-works">
@@ -90,6 +120,27 @@
 
   <!-- ✅ JS -->
   <script type="module" src="app.js"></script>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+    autoplay: {
+      delay: 3000, // Slide every 3 sec
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
 </body>
 </html>
 
