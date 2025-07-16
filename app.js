@@ -23,25 +23,54 @@ console.log("✅ Firebase connected!");
 const translations = {
   en: {
     hero_title: "Buy or Sell Cars – Fast & Secure!",
-    hero_subtitle: "Verified bidders, 24h–7 day flexible auctions"
-    // Add more keys!
+    hero_subtitle: "Verified bidders, 24h-7 day flexible auctions",
+    list_car: "List Your Car",
+    browse_auctions: "Browse Auctions",
+    how_it_works_title: "How It Works",
+    step1: "Register & Verify",
+    step2: "List or Bid",
+    step3: "Connect & Complete Sale",
+    why_trust_title: "Why Trust Us",
+    trust1: "Verified ID for buyers & sellers",
+    trust2: "Secure bids – no fake bidding",
+    trust3: "Local LV/ENG/RUS support"
   },
   lv: {
-    hero_title: "Pērc vai pārdod auto – ātri un droši!",
-    hero_subtitle: "Apstiprināti solītāji, elastīgas izsoles 24h–7 dienas"
+    hero_title: "Pērc vai pārdod auto – Ātri un droši!",
+    hero_subtitle: "Verificēti solītāji, 24/7 elastīgas izsoles",
+    list_car: "Pievienot Auto",
+    browse_auctions: "Apskatīt Izsoles",
+    how_it_works_title: "Kā tas darbojas",
+    step1: "Reģistrējies un verificē",
+    step2: "Pievieno vai piedalies izsolē",
+    step3: "Savienojies un pabeidz darījumu",
+    why_trust_title: "Kāpēc uzticēties mums",
+    trust1: "Verificēti pircēji un pārdevēji",
+    trust2: "Droši darījumi – bez viltus solījumiem",
+    trust3: "Vietējais LV/ENG/RUS atbalsts"
   },
   ru: {
-    hero_title: "Купи или продай авто – быстро и безопасно!",
-    hero_subtitle: "Подтвержденные участники, гибкие аукционы 24ч–7 дней"
+    hero_title: "Купи или продай авто – Быстро и безопасно!",
+    hero_subtitle: "Проверенные участники, 24/7 гибкие аукционы",
+    list_car: "Разместить Авто",
+    browse_auctions: "Просмотр Аукционов",
+    how_it_works_title: "Как это работает",
+    step1: "Зарегистрируйтесь и подтвердите",
+    step2: "Разместите или участвуйте в торгах",
+    step3: "Заключите сделку",
+    why_trust_title: "Почему доверять нам",
+    trust1: "Проверенные покупатели и продавцы",
+    trust2: "Безопасные торги – без фальшивых ставок",
+    trust3: "Местная поддержка LV/ENG/RUS"
   }
 };
 
-const switcher = document.getElementById("language-switcher");
+const languageSelector = document.getElementById("languageSwitcher");
 
-switcher.addEventListener("change", () => {
-  const lang = switcher.value;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
+languageSelector.addEventListener("change", (e) => {
+  const selectedLang = e.target.value;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    el.textContent = translations[lang][key];
+    el.textContent = translations[selectedLang][key];
   });
 });
