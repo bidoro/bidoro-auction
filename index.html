@@ -124,12 +124,13 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    // Optional parameters
     loop: true,
     autoplay: {
-      delay: 3000, // Slide every 3 sec
+      delay: 3000,
       disableOnInteraction: false,
     },
+    slidesPerView: 3, // ✅ Shows 3 cards at once
+    spaceBetween: 30, // ✅ Space between cards
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -138,8 +139,20 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   });
 </script>
+
 
 </body>
 </html>
