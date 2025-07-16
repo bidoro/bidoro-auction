@@ -1,35 +1,21 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-}
-
-h1 {
-  color: #2c3e50;
-}
-
-p {
-  color: #555;
-}
-/* Basic reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  color: #333;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background: #222;
+  padding: 20px;
   color: #fff;
 }
 
 .navbar .logo {
+  font-size: 1.8rem;
   font-weight: bold;
-  font-size: 1.5rem;
 }
 
 .navbar .nav-links {
@@ -52,31 +38,74 @@ body {
 }
 
 .hero {
+  background: url('hero-car.jpg') no-repeat center center/cover;
+  color: #fff;
   text-align: center;
-  padding: 100px 20px;
-  background: #f4f4f4;
+  padding: 150px 20px;
 }
 
-.featured-listings {
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  background: #007BFF;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.hero-buttons .btn-secondary {
+  background: #555;
+}
+
+.featured-auctions,
+.how-it-works,
+.why-trust {
   padding: 50px 20px;
   text-align: center;
 }
 
-.carousel {
+.auction-cards {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
-.listing {
+.card {
+  background: #f4f4f4;
   border: 1px solid #ddd;
   padding: 20px;
   width: 200px;
 }
 
+.steps,
+.trust-points {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step img,
+.point img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
 footer {
-  text-align: center;
-  padding: 20px;
   background: #222;
   color: #fff;
+  text-align: center;
+  padding: 20px;
 }
