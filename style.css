@@ -12,3 +12,71 @@ h1 {
 p {
   color: #555;
 }
+/* Basic reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#language-switcher {
+  background: #fff;
+  color: #222;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f4f4f4;
+}
+
+.featured-listings {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.listing {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 200px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+}

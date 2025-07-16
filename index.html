@@ -1,15 +1,46 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bidoro Auction</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bidoro Car Auction</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Bidoro!</h1>
-  <p>Our automated car auction site is coming soon.</p>
+  <!-- ✅ NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Bidoro</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Auctions</a></li>
+      <li><a href="#">Register</a></li>
+    </ul>
+    <button id="language-switcher">🌐 EN</button>
+  </nav>
 
+  <!-- ✅ HERO SECTION -->
+  <header class="hero">
+    <h1>Welcome to Bidoro</h1>
+    <p>Your trusted car auction platform.</p>
+  </header>
+
+  <!-- ✅ FEATURED LISTINGS -->
+  <section class="featured-listings">
+    <h2>Featured Auctions</h2>
+    <div class="carousel">
+      <!-- Listings will go here dynamically later -->
+      <div class="listing">Example Listing 1</div>
+      <div class="listing">Example Listing 2</div>
+    </div>
+  </section>
+
+  <!-- ✅ FOOTER -->
+  <footer>
+    <p>&copy; 2025 Bidoro. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ JS -->
   <script type="module" src="app.js"></script>
 </body>
 </html>
+
