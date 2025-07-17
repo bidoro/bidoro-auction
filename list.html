@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>List Your Car | Bidoro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+  <a href="index.html" class="logo">Bidoro</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+  </ul>
+  <select id="language-switcher">
+  <option value="en">EN</option>
+  <option value="lv">LV</option>
+  <option value="ru">RU</option>
+</select>
+  </header>
+
+  <!-- List Your Car Form -->
+  <section class="list-your-car">
+    <h1>List Your Car for Auction</h1>
+    <form id="carForm">
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input type="text" id="make" name="make" required>
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" id="model" name="model" required>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" id="year" name="year" required>
+      </div>
+
+      <div class="form-group">
+        <label for="startingPrice">Starting Price (€)</label>
+        <input type="number" id="startingPrice" name="startingPrice" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Car Image URL</label>
+        <input type="url" id="image" name="image" required>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Auction Duration (in days)</label>
+        <input type="number" id="duration" name="duration" required>
+      </div>
+
+      <button type="submit" class="btn">Submit Listing</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bidoro. All rights reserved.</p>
+  </footer>
+
+  <script src="list.js"></script>
+</body>
+</html>

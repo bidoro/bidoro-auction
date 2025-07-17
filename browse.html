@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Auctions | Bidoro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+  <a href="index.html" class="logo">Bidoro</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+  </ul>
+  <select id="language-switcher">
+  <option value="en">EN</option>
+  <option value="lv">LV</option>
+  <option value="ru">RU</option>
+</select>
+    </nav>
+  </header>
+
+  <!-- Auction Filters -->
+  <section class="filters">
+    <select id="filter-make">
+      <option value="">All Makes</option>
+      <option value="BMW">BMW</option>
+      <option value="Audi">Audi</option>
+      <option value="Porsche">Porsche</option>
+      <option value="Volkswagen">Volkswagen</option>
+    </select>
+
+    <select id="sort">
+      <option value="ending-soon">Ending Soon</option>
+      <option value="newest">Newest</option>
+      <option value="price-low-high">Price: Low to High</option>
+      <option value="price-high-low">Price: High to Low</option>
+    </select>
+  </section>
+
+  <!-- Auction Grid -->
+  <section class="auction-grid">
+    <!-- Listings will be inserted here dynamically -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bidoro. All rights reserved.</p>
+  </footer>
+
+  <script src="auction-data.js"></script>
+  <script src="browse.js"></script>
+</body>
+</html>

@@ -54,19 +54,34 @@ body {
   margin-bottom: 30px;
 }
 
-.hero-buttons .btn-primary,
-.hero-buttons .btn-secondary {
-  background: #007BFF;
-  color: #fff;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin: 5px;
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.hero-buttons .btn-secondary {
-  background: #555;
+.hero-btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.white-btn {
+  background-color: transparent;
+  color: white;
+}
+
+.white-btn:hover {
+  background-color: white;
+  color: #1a1a1a;
+}
+
 
 .featured-auctions,
 .how-it-works,
@@ -132,45 +147,89 @@ footer {
 }
 
 
-.auctions {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.auctions h1 {
-  text-align: center;
-  color: #003366; /* Your brand blue */
+.filters select {
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
-.auction-listings {
+.auction-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-.auction-card {
+.auction-box {
   border: 1px solid #ddd;
+  padding: 1rem;
   border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  background: white;
+  text-align: center;
 }
 
-.auction-card:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.auction-card img {
+.auction-box img {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
+  border-radius: 4px;
 }
 
-.auction-card h3 {
-  margin: 10px;
+.verified {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: blue;
+  font-weight: bold;
+}
+.list-your-car {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.auction-card p {
-  margin: 0 10px 10px 10px;
+.list-your-car h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
