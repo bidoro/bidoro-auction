@@ -1,69 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>List Your Car | Bidoro</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>List Your Car - Bidoro</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    .container {
+      max-width: 800px;
+      margin: 100px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .checkbox-container input {
+      width: auto;
+      margin-right: 10px;
+    }
+    #preview {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar">
-  <a href="index.html" class="logo">Bidoro</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-  </ul>
-  <select id="language-switcher">
-  <option value="en">EN</option>
-  <option value="lv">LV</option>
-  <option value="ru">RU</option>
-</select>
+
+  <!-- Navbar -->
+  <header style="background: #fff; padding: 20px; border-bottom: 1px solid #eee;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="color: #007bff;">Bidoro</h2>
+      <nav>
+        <a href="index.html" style="margin-right: 20px;">Home</a>
+        <a href="auctions.html">Auctions</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- List Your Car Form -->
-  <section class="list-your-car">
-    <h1>List Your Car for Auction</h1>
-    <form id="carForm">
-      <div class="form-group">
-        <label for="make">Make</label>
-        <input type="text" id="make" name="make" required>
+  <!-- Form -->
+  <div class="container">
+    <h1>List Your Car</h1>
+
+    <form id="listForm">
+      <label>Car Brand:</label>
+      <select id="brand" required>
+        <option value="">Select brand</option>
+      </select>
+
+      <label>Car Model:</label>
+      <select id="model" required>
+        <option value="">Select model</option>
+      </select>
+
+      <label>Year:</label>
+      <select id="year" required></select>
+
+      <label>Engine Type:</label>
+      <select id="engine" required>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="Electric">Electric</option>
+      </select>
+
+      <label>Mileage (km):</label>
+      <input type="number" id="mileage" required>
+
+      <label>Upload Car Image:</label>
+      <input type="file" id="image" accept="image/*">
+      <img id="preview" src="#" alt="Image preview" style="display:none;"/>
+
+      <label>Listing Duration:</label>
+      <select id="duration" required>
+        <option value="24">24 hours</option>
+        <option value="48">48 hours</option>
+        <option value="72">72 hours</option>
+        <option value="96">96 hours</option>
+        <option value="120">120 hours</option>
+        <option value="144">144 hours</option>
+        <option value="168">168 hours</option>
+      </select>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="featured">
+        <label for="featured">Feature this listing (+7€)</label>
       </div>
 
-      <div class="form-group">
-        <label for="model">Model</label>
-        <input type="text" id="model" name="model" required>
-      </div>
+      <div class="price" id="price">Total: 2€</div>
 
-      <div class="form-group">
-        <label for="year">Year</label>
-        <input type="number" id="year" name="year" required>
-      </div>
-
-      <div class="form-group">
-        <label for="startingPrice">Starting Price (€)</label>
-        <input type="number" id="startingPrice" name="startingPrice" required>
-      </div>
-
-      <div class="form-group">
-        <label for="image">Car Image URL</label>
-        <input type="url" id="image" name="image" required>
-      </div>
-
-      <div class="form-group">
-        <label for="duration">Auction Duration (in days)</label>
-        <input type="number" id="duration" name="duration" required>
-      </div>
-
-      <button type="submit" class="btn">Submit Listing</button>
+      <button type="submit">Submit Listing</button>
     </form>
-  </section>
+  </div>
 
   <!-- Footer -->
-  <footer>
+  <footer style="background: #007bff; color: white; text-align: center; padding: 20px; margin-top: 60px;">
     <p>&copy; 2025 Bidoro. All rights reserved.</p>
   </footer>
 
-  <script src="list.js"></script>
+  <script>
+    const carData = {
+      "Audi": ["A1", "A3", "A4", "A5", "A6", "Q2", "Q3", "Q5", "Q7"],
+      "BMW": ["1 Series", "3 Series", "5 Series", "7 Series", "X1", "X3", "X5"],
+      "Mercedes-Benz": ["A-Class", "C-Class", "E-Class", "S-Class", "GLA", "GLC", "GLE"],
+      "Porsche": ["911", "Cayenne", "Macan", "Panamera", "Taycan"],
+      "Volkswagen": ["Golf", "Passat", "Tiguan", "Touareg", "Polo"],
+      "Toyota": ["Corolla", "Camry", "Yaris", "RAV4", "Land Cruiser"],
+      "Tesla": ["Model S", "Model 3", "Model X", "Model Y"]
+    };
+
+    const brandSelect = document.getElementById('brand');
+    const modelSelect = document.getElementById('model');
+    const duration = document.getElementById('duration');
+    const featured = document.getElementById('featured');
+    const price = document.getElementById('price');
+    const imageInput = document.getElementById('image');
+    const preview = document.getElementById('preview');
+    const yearSelect = document.getElementById('year');
+
+    // Populate brands
+    Object.keys(carData).forEach(brand => {
+      const option = document.createElement("option");
+      option.value = brand;
+      option.text = brand;
+      brandSelect.appendChild(option);
+    });
+
+    // Populate models
+    brandSelect.addEventListener("change", function () {
+      const models = carData[this.value] || [];
+      modelSelect.innerHTML = '<option value="">Select model</option>';
+      models.forEach(model => {
+        const option = document.createElement("option");
+        option.value = model;
+        option.text = model;
+        modelSelect.appendChild(option);
+      });
+    });
+
+    // Populate year dropdown
+    for (let year = 2025; year >= 1960; year--) {
+      const option = document.createElement("option");
+      option.value = year;
+      option.text = year;
+      yearSelect.appendChild(option);
+    }
+
+    // Price calculator
+    function updatePrice() {
+      const days = parseInt(duration.value);
+      const base = (days / 24) * 2;
+      const total = base + (featured.checked ? 7 : 0);
+      price.textContent = `Total: ${total}€`;
+    }
+    duration.addEventListener('change', updatePrice);
+    featured.addEventListener('change', updatePrice);
+
+    // Image preview
+    imageInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
+      }
+    });
+
+    // Submit
+    document.getElementById('listForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Car listed successfully!");
+      window.location.href = 'auctions.html'; // ✅ Redirect to auctions page
+    });
+
+    updatePrice(); // initial calculation
+  </script>
 </body>
 </html>
+
